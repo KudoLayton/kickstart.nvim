@@ -44,6 +44,8 @@ return {
   require 'custom.plugins.bufferline',
   require 'custom.plugins.diffview',
   require 'custom.plugins.debug',
+  require 'custom.plugins.copilot',
+  require 'custom.plugins.cmp',
   -- require 'custom.plugins.eagle',
   'equalsraf/neovim-gui-shim',
   'powerman/vim-plugin-AnsiEsc',
