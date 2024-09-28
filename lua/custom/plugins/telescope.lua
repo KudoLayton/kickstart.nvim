@@ -29,6 +29,31 @@ vim.keymap.set('n', '<leader>stqg', function()
   }
 end, { desc = '[S]earch with [Q]uery [G]rep' })
 
+--   get_status_text = function(picker, opts)
+--     local ww = #(picker:get_multi_selection())
+--     local xx = (picker.stats.processed or 0) - (picker.stats.filtered or 0)
+--     local yy = picker.stats.processed or 0
+--     if xx == 0 and yy == 0 then
+--       return "*"
+--     end
+--
+--     local status_icon
+--     if opts.completed then
+--       status_icon = "✔️"
+--     else
+--       status_icon = "*"
+--     end
+--     if ww == 0 then
+--       return string.format("%s %s / %s", status_icon, xx, yy)
+--     else
+--       return string.format("%s / %s / %s", ww, xx, yy)
+--     end
+--   end,
+--   path_display = {
+--     shorten = { len = 2, exclude = {-1, -2, -3} }
+--   },
+-- end,
+
 return {
   'nvim-telescope/telescope-live-grep-args.nvim',
   dependencies = { 'nvim-telescope/telescope.nvim' },
