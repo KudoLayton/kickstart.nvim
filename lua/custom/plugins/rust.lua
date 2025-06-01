@@ -2,7 +2,7 @@ return {
   'simrat39/rust-tools.nvim',
   ft = 'rust',
   config = function()
-    local mason_path = os.getenv 'HOME' .. '.local/share/nvim/mason/'
+    local mason_path = os.getenv 'HOMEPATH' .. '.local/share/nvim/mason/'
     local codelldb_path = mason_path .. 'packages/codelldb/codelldb'
     local liblldb_path = mason_path .. 'packages/codelldb/extension/lldb/bin/liblldb.so'
     local rt = require 'rust-tools'
