@@ -3,6 +3,10 @@
 --
 -- See the kickstart.nvim README for more information
 --
+--
+
+-- Set precompile loader
+vim.loader.enable(true)
 
 -- Relative, absolute line number setup
 vim.o.rnu = true
