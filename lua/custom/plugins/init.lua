@@ -54,4 +54,5 @@ return {
   'equalsraf/neovim-gui-shim',
   'powerman/vim-plugin-AnsiEsc',
   'folke/twilight.nvim',
+  'tpope/vim-fugitive',
 }
