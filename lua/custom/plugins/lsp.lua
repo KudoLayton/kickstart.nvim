@@ -1,3 +1,13 @@
+local function goto_def_or_decl()
+  local ok = pcall(vim.lsp.buf.definition, { reuse_win = true })
+  if not ok then
+    pcall(vim.lsp.buf.declaration, { reuse_win = true })
+  end
+end
+
+vim.keymap.set('n', 'gd', goto_def_or_decl, { desc = 'Go to definition (fallback: declaration)' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+
 return {
   {
     'ray-x/lsp_signature.nvim',
