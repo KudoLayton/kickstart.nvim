@@ -35,6 +35,9 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 -- bind <space>-p to get current buffer path
 vim.keymap.set('n', '<space>p', ":echo expand('%:p')<CR>")
 
+-- edit vimrc
+vim.keymap.set('n', '<space>rc', ':vsplit $MYVIMRC<CR>', { desc = 'Vim Configuration' })
+
 return {
   require 'custom.plugins.toggleterm',
   require 'custom.plugins.oil',
