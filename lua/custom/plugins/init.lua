@@ -49,8 +49,6 @@ return {
   require 'custom.plugins.diffview',
   require 'custom.plugins.debug',
   require 'custom.plugins.copilot_blink',
-  -- require 'custom.plugins.cmp',
-  -- require 'custom.plugins.eagle',
   'equalsraf/neovim-gui-shim',
   'powerman/vim-plugin-AnsiEsc',
   'folke/twilight.nvim',
