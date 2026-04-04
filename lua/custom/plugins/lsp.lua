@@ -7,6 +7,12 @@ end
 
 vim.keymap.set('n', 'gd', goto_def_or_decl, { desc = 'Go to definition (fallback: declaration)' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.c', '*.cpp', '*.h' },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
 
 return {
   {

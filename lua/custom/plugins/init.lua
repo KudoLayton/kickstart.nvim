@@ -18,6 +18,19 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = false
 
+vim.o.shell = 'pwsh.exe'
+vim.o.shellcmdflag = '-NoLogo -NoProfile -Command'
+vim.o.shellquote = ''
+vim.o.shellxquote = ''
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+  group = vim.api.nvim_create_augroup('kudolayton-autoread', { clear = true }),
+  callback = function()
+    vim.cmd 'silent! checktime'
+  end,
+})
+
 vim.keymap.set('i', '<C-v>', '<C-r>+', { desc = 'Paste Clipboard' })
 vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true, silent = true })
 
@@ -38,20 +51,24 @@ vim.keymap.set('n', '<space>p', ":echo expand('%:p')<CR>")
 -- edit vimrc
 vim.keymap.set('n', '<space>rc', ':vsplit $MYVIMRC<CR>', { desc = 'Vim Configuration' })
 
+-- recover legacy 's' command function to 'ss' (remove one character and insert)
+-- vim.keymap.set('n', 'ss', 's', { desc = 'Legacy s command', remap = true })
+
 return {
-  require 'custom.plugins.toggleterm',
   require 'custom.plugins.oil',
   require 'custom.plugins.telescope',
   require 'custom.plugins.rust',
   require 'custom.plugins.godot',
   require 'custom.plugins.neoscroll',
   require 'custom.plugins.lsp',
-  require 'custom.plugins.symbols-outline',
+  require 'custom.plugins.outline',
   require 'custom.plugins.surround',
   require 'custom.plugins.bufferline',
   require 'custom.plugins.diffview',
   require 'custom.plugins.debug',
   require 'custom.plugins.copilot_blink',
+  require 'custom.plugins.jj-diffconflicts',
+  require 'custom.plugins.claude_code',
   'equalsraf/neovim-gui-shim',
   'powerman/vim-plugin-AnsiEsc',
   'folke/twilight.nvim',
